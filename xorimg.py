@@ -12,8 +12,9 @@ print("[+] Reading pic1")  #finding the size of picture1
 pic2=Image.open(pic2_name)
 print("[+] Reading pic2") #finding the size of picture2
 
-pic2=pic1.resize(pic1.size) #resizing the pic2 according to pic1
-print("[+] pic2 resized Successfully.")
+#pic2=pic1.resize(pic1.size) #resizing the pic2 according to pic1
+#print("[+] pic2 resized Successfully.")
+
 '''
 so that we can xor each and every coordinate of both the pictures
 '''
@@ -31,6 +32,7 @@ for y in range(y_cord_pic1):
         pixel_2=pic2.getpixel((x,y))
         newpixel =[]
         for p in range(len(pixel_1[:3])): #for all three values
+
             newpixel.append(pixel_1[p] ^ pixel_2[p]) # ^ --> use to xor two Values
         newpixel=tuple(newpixel)
         #print(newpixel)
